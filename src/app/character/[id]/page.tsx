@@ -35,13 +35,6 @@ export default function Character({ params }: PageProps) {
               <button>Favorite</button>
             </S.Actions>
             <S.Wrapper>
-              <S.Information>
-                <h1>{data?.character?.name}</h1>
-                <p>Status: {data?.character?.status}</p>
-                <p>Gender: {data?.character?.gender}</p>
-                <p>Species: {data?.character?.species}</p>
-                <p>Location: {data?.character?.location.name}</p>
-              </S.Information>
               <S.Images>
                 <S.Img
                   src={data?.character.image}
@@ -56,6 +49,13 @@ export default function Character({ params }: PageProps) {
                   alt={data?.character?.name}
                 />
               </S.Images>
+              <S.Information>
+                <h1>{data?.character?.name}</h1>
+                <p>Status: {data?.character?.status}</p>
+                <p>Gender: {data?.character?.gender}</p>
+                <p>Species: {data?.character?.species}</p>
+                <p>Location: {data?.character?.location.name}</p>
+              </S.Information>
             </S.Wrapper>
           </>
         )}

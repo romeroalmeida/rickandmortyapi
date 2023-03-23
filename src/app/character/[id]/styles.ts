@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   gap: 2.5rem;
   height: 100%;
   position: relative;
+  padding: 3rem 0;
 `;
 
 export const Actions = styled.div`
@@ -51,9 +52,7 @@ export const Information = styled.div`
   }
 `;
 
-export const Images = styled.div`
-  min-width: 28.125rem;
-`;
+export const Images = styled.div``;
 
 export const Img = styled(Image)`
   border-radius: 7.5rem 0 7.5rem;
