@@ -4,19 +4,18 @@ type FavoriteProps = {
   id: string;
   name: string;
   image: string;
-}
+};
 type Props = {
   favorites: FavoriteProps[];
-  setFavorites: (value: {}) => void;
+  setFavorites: (value: FavoriteProps) => void;
 };
 
 export const useFavorites = create<Props>((set) => ({
   favorites: [],
-  
-  setFavorites:  (character: any) => {
-    set((state) => ({
-      favorites:  [...state.favorites, character] 
-    }))
-  },
 
+  setFavorites: (character: FavoriteProps) => {
+    set((state) => ({
+      favorites: [...state.favorites, character],
+    }));
+  },
 }));

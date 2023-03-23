@@ -1,22 +1,13 @@
+import { Character } from '@/types/charracter';
 import * as S from './styles';
 
-type Character = {
-  character: {
-    id?: string;
-    image?: string;
-    location?: {
-      name: string;
-    };
-    name?: string;
-    status?: string;
-  };
+type CardProps = {
+  character: Character;
   onClick?: () => void;
 };
 
-const Card = (props: Character) => {
-  console.log(props);
+const Card = (props: CardProps) => {
   const { image, name, status } = props.character;
-
   return (
     <S.Container onClick={props.onClick}>
       <S.ImageMain bgImage={image} />

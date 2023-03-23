@@ -18,6 +18,7 @@ export const ImageMain = styled.div<ContainerProps>`
 
 export const Container = styled.div<ContainerProps>`
   width: 100%;
+  height: 16rem;
   background: #fff no-repeat center center;
   background-size: cover;
   display: flex;

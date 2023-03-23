@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import ArroLeft from '@/assets/arrow-left.svg';
 
 import * as S from './styles';
+import { Loading } from '@/components/Loading';
 
 type PageProps = {
   params: {
@@ -23,7 +24,7 @@ export default function Character({ params }: PageProps) {
   return (
     <S.Container>
       <CenterPage>
-        {isLoading && <h1>Loading...</h1>}
+        {isLoading && <Loading />}
         {!isLoading && (
           <>
             <S.Actions>
