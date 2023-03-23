@@ -4,16 +4,15 @@ const primary = '#4285f4';
 const secondary = '#1654b0';
 const third = '#4285f4';
 const fourth = '#fbbc05';
-const containerDimentions = '30px';
-const shapeDimentions = '10px';
-const amount = '16px';
+const containerDimentions = '50px';
+const shapeDimentions = '20px';
+const amount = '30px';
 
 export const WrapperContainer = styled.div`
   display: flex;
   align-items: center;
   p {
-    margin-left: 10px;
-    color: ${primary};
+    margin-left: 20px;
   }
 `;
 
