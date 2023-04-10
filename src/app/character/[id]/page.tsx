@@ -9,6 +9,8 @@ import ArroLeft from '@/assets/arrow-left.svg';
 
 import * as S from './styles';
 import { Loading } from '@/components/Loading';
+import { useFavorites } from '@/store/favorites';
+import { ButtonFavorite } from '@/components/ButtonFavorite';
 
 type PageProps = {
   params: {
@@ -18,8 +20,16 @@ type PageProps = {
 
 export default function Character({ params }: PageProps) {
   const { isLoading, data } = useCharacter(params.id);
+  const addFavorites = useFavorites((state) => state.setFavorites);
+  const favorites = useFavorites((state) => state.favorites);
 
   const router = useRouter();
+
+  function handleFavorite() {
+    console.log(`oi`);
+    const { id, name, image } = data?.character;
+    addFavorites({ id, name, image });
+  }
 
   return (
     <S.Container>
@@ -32,7 +42,12 @@ export default function Character({ params }: PageProps) {
                 <Image src={ArroLeft} alt="Back" width={20} height={20} />
                 Back
               </S.Back>
-              <button>Favorite</button>
+              <ButtonFavorite
+                favorite={favorites.some(
+                  (objeto) => objeto.id === data?.character?.id
+                )}
+                onClick={handleFavorite}
+              />
             </S.Actions>
             <S.Wrapper>
               <S.Images>

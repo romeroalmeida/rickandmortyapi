@@ -14,8 +14,18 @@ export const useFavorites = create<Props>((set) => ({
   favorites: [],
 
   setFavorites: (character: FavoriteProps) => {
-    set((state) => ({
-      favorites: [...state.favorites, character],
-    }));
+    set((state) => {
+      const indice = state.favorites.findIndex(
+        (item) => item.id === character.id
+      );
+      if (indice == -1) {
+        return { favorites: [...state.favorites, character] };
+      } else {
+        const newFavorites = state.favorites.filter(
+          (item) => item.id !== character.id
+        );
+        return { favorites: newFavorites };
+      }
+    });
   },
 }));

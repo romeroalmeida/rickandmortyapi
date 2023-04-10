@@ -11,6 +11,7 @@ export const ListCard = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 2px;
+  min-height: 515px;
   &:hover > :not(:hover) {
     opacity: 0.7;
     filter: grayscale(1) blur(2px);
