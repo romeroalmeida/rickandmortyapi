@@ -7,10 +7,10 @@ import { useRouter } from 'next/navigation';
 
 import ArroLeft from '@/assets/arrow-left.svg';
 
-import * as S from './styles';
+import { ButtonFavorite } from '@/components/ButtonFavorite';
 import { Loading } from '@/components/Loading';
 import { useFavorites } from '@/store/favorites';
-import { ButtonFavorite } from '@/components/ButtonFavorite';
+import * as S from './styles';
 
 type PageProps = {
   params: {
@@ -26,7 +26,6 @@ export default function Character({ params }: PageProps) {
   const router = useRouter();
 
   function handleFavorite() {
-    console.log(`oi`);
     const { id, name, image } = data?.character;
     addFavorites({ id, name, image });
   }

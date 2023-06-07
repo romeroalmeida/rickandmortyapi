@@ -28,9 +28,9 @@ background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 position: relative;
-padding-bottom: 22rem;
-min-height: calc(100vh - 22rem );
-&:after {
+/* padding-bottom: 22rem; */
+min-height: 100vh;
+/* &:after {
   content: '';
   background: url(${bg.src}) bottom no-repeat;
   position: absolute;
@@ -39,7 +39,7 @@ min-height: calc(100vh - 22rem );
   height: 34.375rem;
   background-size: cover;
   z-index: -1;
-}
+} */
 
 }
 * {

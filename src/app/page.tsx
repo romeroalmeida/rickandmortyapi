@@ -16,27 +16,25 @@ export default function Home() {
   const { isLoading, data } = useCharacters(page);
 
   return (
-    <>
-      <main>
-        <CenterPage>
-          {isLoading && <Loading />}
-          <ListCard>
-            {data?.characters?.results?.map((item: Character) => (
-              <Card
-                character={item}
-                key={item.id}
-                onClick={() => router.push(`/character/${item.id}`)}
-              />
-            ))}
-          </ListCard>
-          <Pagination
-            pages={data?.characters.info.pages}
-            count={data?.characters.info.count}
-            prev={data?.characters.info.prev}
-            next={data?.characters.info.next}
-          />
-        </CenterPage>
-      </main>
-    </>
+    <main>
+      <CenterPage>
+        {isLoading && <Loading />}
+        <ListCard>
+          {data?.characters?.results?.map((item: Character) => (
+            <Card
+              character={item}
+              key={item.id}
+              onClick={() => router.push(`/character/${item.id}`)}
+            />
+          ))}
+        </ListCard>
+        <Pagination
+          pages={data?.characters.info.pages}
+          count={data?.characters.info.count}
+          prev={data?.characters.info.prev}
+          next={data?.characters.info.next}
+        />
+      </CenterPage>
+    </main>
   );
 }
